@@ -1,0 +1,104 @@
+/* ===== PAGE ===== */
+#about {
+  padding: 30px 40px;
+}
+
+/* ===== TITLE ===== */
+#about h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #111827;
+}
+
+/* ===== TEAM GRID ===== */
+#a1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+}
+
+/* ===== TEAM CARD ===== */
+.m2 {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+
+  padding: 25px;
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.m2:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== IMAGE ===== */
+.m2 img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  margin-bottom: 15px;
+
+  border: 3px solid #e5e7eb;
+}
+
+/* ===== NAME ===== */
+.m2 h3 {
+  font-size: 16px;
+  color: #111827;
+  margin-bottom: 5px;
+}
+
+/* ===== ROLE BADGE ===== */
+.role {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px 12px;
+  border-radius: 12px;
+  background: #6366f1;
+  color: white;
+  font-size: 12px;
+}
+
+/* ===== EMPTY STATE ===== */
+.no-data {
+  text-align: center;
+  grid-column: span 3;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  #a1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .no-data {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  #a1 {
+    grid-template-columns: 1fr;
+  }
+
+  .no-data {
+    grid-column: span 1;
+  }
+
+  #about {
+    padding: 20px;
+  }
+}

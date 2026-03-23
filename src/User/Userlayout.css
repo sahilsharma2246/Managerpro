@@ -1,0 +1,28 @@
+/* ===== USER LAYOUT ===== */
+.user-layout {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #111827;
+}
+
+/* HEADER already styled separately */
+
+/* MAIN CONTENT */
+.user-content {
+  padding: 20px 40px;
+}
+
+/* PAGE TITLE */
+.user-content h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* CARD STYLE */
+.user-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}

@@ -1,0 +1,1 @@
+export default function AdminFooter(){return <footer>Admin Footer</footer>}
