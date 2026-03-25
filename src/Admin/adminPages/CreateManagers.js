@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import  firedb from "../../firebase"
-import AdminHeader from '../adminComponent/AdminHeader'
 import { useNavigate } from 'react-router-dom'
+import "./Create.css"
 
 function CreateManagers() {
 
@@ -40,7 +40,7 @@ function CreateManagers() {
     
     return (
       <div id='paneladmin'>
-        <AdminHeader/>
+        
         <div id='login1'>
         <h2>Register</h2>
         

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import firedb from "../../firebase"
 import { useNavigate } from 'react-router-dom'
-import AdminHeader from '../adminComponent/AdminHeader'
+
 
 function List() {
     var [manager, setManager] = useState()
@@ -46,7 +46,7 @@ firedb.child("Manager").child(key).update({validity:0});
 
   return (
     <div id='paneladmin'>
-        <AdminHeader/>
+       
         <h1>Managers</h1>
         <div class="container">
         <table class="table table-bordered">

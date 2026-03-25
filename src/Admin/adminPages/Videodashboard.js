@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from 'react';
-import AdminHeader from '../adminComponent/AdminHeader';
 import firedb from '../../firebase';
+import "./Adminvideo.css"
 
 function Dashboard() {
   var [holder, setHolder] = useState();
@@ -46,10 +46,7 @@ function Dashboard() {
     info();
   }, []);
 
-  var s = {
-    height: "100px",
-    width: "100px"
-  };
+ 
 
   function Del(key) {
     firedb.child("Video").child(key).remove();
@@ -58,7 +55,6 @@ function Dashboard() {
 
   return (
     <div id='paneladmin'>
-      <AdminHeader />
       <h1>Data uploaded</h1>
       <select onChange={set} value={data}>
         <option>All</option>
@@ -81,7 +77,7 @@ function Dashboard() {
               return (
                 <tr key={key}>
                   <td>
-                     <iframe style={s} src={filteredHolder[key].ID}></iframe>
+                     <iframe  src={filteredHolder[key].ID} title="Video Preview"></iframe>
                   </td>
                   <td>{filteredHolder[key].uploader}</td>
                   <td>{filteredHolder[key].uploadedAt}</td>

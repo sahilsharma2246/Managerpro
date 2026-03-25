@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useEffect, useState } from 'react'
 
-
+import "./Video.css"
 
 import firedb from "../../firebase"
 
@@ -17,27 +17,19 @@ function ShowVideo() {
     show()
   }, []);
 
-  var s = {
-    height: "400px",
-    width: "600px",
-    margin: "20px",
-  }
-
+ 
   return (
     <div id='gallery'>
       <h2>Videos</h2>
-      {
-
-        holder ? Object.keys(holder).map(function (key) {
-          return (
-
-            <iframe style={s} src={holder[key].ID}></iframe>
-
-
-          )
-        }) : ""
-      }
-
+       <div className="video-container">
+    {
+      holder ? Object.keys(holder).map((key) => (
+        <div className="video-frame">
+          <iframe src={holder[key].ID}></iframe>
+        </div>
+      )) : ""
+    }
+  </div>
     </div>
   )
 }

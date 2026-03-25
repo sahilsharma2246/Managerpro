@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import firedb from "../../firebase"
 import { useNavigate } from 'react-router-dom';
+import "./Login.css"
 
 function ManagerLogin() {
   const [email, setEmail] = useState('');

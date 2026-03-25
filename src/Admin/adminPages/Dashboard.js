@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from 'react';
-import AdminHeader from '../adminComponent/AdminHeader';
 import firedb from '../../firebase';
 
 function Dashboard() {
@@ -58,7 +57,7 @@ function Dashboard() {
 
   return (
     <div id='paneladmin'>
-      <AdminHeader />
+      
       <h1>Data uploaded</h1>
       <select onChange={set} value={data}>
         <option>All</option>

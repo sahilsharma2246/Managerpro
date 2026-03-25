@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import AdminHeader from "../adminComponent/AdminHeader";
 import firedb from "../../firebase"
 
 import React, { useEffect, useState } from 'react'
@@ -42,7 +41,6 @@ function ShowContact() {
 
   return (
     <div id="paneladmin">
-      <AdminHeader />
      <h1>Contact Messages</h1>
       <div class="container">
         <table class="table table-bordered">

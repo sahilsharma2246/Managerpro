@@ -3,6 +3,7 @@
 import firedb from "../../firebase";
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "./Login.css"
 
 function Login() {
   const [email, setEmail] = useState('');

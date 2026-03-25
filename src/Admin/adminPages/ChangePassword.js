@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import AdminHeader from '../adminComponent/AdminHeader'
+import "./change.css"
 import firedb from "../../firebase"
 import { useNavigate } from 'react-router-dom';
 
@@ -34,11 +34,21 @@ function set(e)
     }
   return (
     <div id='paneladmin'>
-      <AdminHeader/>
-       <input type="password" placeholder='enter new password'
-       onChange={set} required ></input>
-      <button onClick={change}>Change Password</button>
-    </div>
+ 
+
+  <div className="change-card">
+    <h2>Change Password</h2>
+
+    <input 
+      type="password" 
+      placeholder="Enter new password"
+      onChange={set} 
+      required 
+    />
+
+    <button onClick={change}>Change Password</button>
+  </div>
+</div>
   )
 }
 

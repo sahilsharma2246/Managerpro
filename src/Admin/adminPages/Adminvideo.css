@@ -1,0 +1,122 @@
+/* ===== WRAPPER ===== */
+#paneladmin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* ===== TITLE ===== */
+#paneladmin h1 {
+  margin: 20px 0;
+  color: #111827;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* ===== DROPDOWN ===== */
+#paneladmin select {
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 20px;
+  background: white;
+  outline: none;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  width: 100%;
+  max-width: 950px;
+}
+
+/* ===== TABLE (DESKTOP) ===== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.table thead {
+  background: linear-gradient(90deg, #6366f1, #4f46e5);
+  color: white;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* ===== VIDEO ===== */
+.table iframe {
+  width: 140px;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+}
+
+/* ===== BUTTON ===== */
+#btng {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: none;
+  background: #ef4444;
+  color: white;
+}
+
+/* ================================= */
+/* 🔥 MOBILE VIEW (CARD STYLE) */
+/* ================================= */
+@media (max-width: 600px) {
+
+  /* hide table header */
+  .table thead {
+    display: none;
+  }
+
+  /* make rows card */
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+
+  .table td {
+    text-align: left;
+    padding: 8px 0;
+    border: none;
+    font-size: 14px;
+  }
+
+  /* add labels */
+  .table td:nth-child(1)::before { content: "Video: "; font-weight: bold; }
+  .table td:nth-child(2)::before { content: "Uploaded By: "; font-weight: bold; }
+  .table td:nth-child(3)::before { content: "Time: "; font-weight: bold; }
+  .table td:nth-child(4)::before { content: "Action: "; font-weight: bold; }
+
+  /* video full width */
+  .table iframe {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* button full width */
+  #btng {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
