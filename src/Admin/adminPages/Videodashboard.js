@@ -54,7 +54,7 @@ function Dashboard() {
   }
 
   return (
-    <div id='paneladmin'>
+    <div>
       <h1>Data uploaded</h1>
       <select onChange={set} value={data}>
         <option>All</option>

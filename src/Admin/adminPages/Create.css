@@ -1,100 +1,86 @@
-/* ===== WRAPPER ===== */
-#paneladmin {
-  width: 100%;
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 20px;
-}
-
-/* ===== CARD ===== */
+/* ===== PAGE CENTER ===== */
 #login1 {
-  width: 100%;
-  max-width: 420px;
+  max-width: 380px;
+  margin: 80px auto;
+  padding: 30px 25px;
 
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
+  background: #ffffff;
+  border-radius: 14px;
 
-  padding: 30px;
-  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  text-align: center;
 }
 
 /* ===== TITLE ===== */
 #login1 h2 {
-  text-align: center;
-  color: #111827;
-  font-size: 22px;
+  margin-bottom: 20px;
+  color: #1e293b;
+  font-weight: 600;
 }
 
 /* ===== INPUTS ===== */
 #i1 {
-  padding: 10px 15px;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 12px;
 
-  outline: none;
-  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+
   font-size: 14px;
+  outline: none;
+
+  transition: all 0.2s ease;
 }
 
-/* FILE INPUT */
-#i1[type="file"] {
+/* INPUT FOCUS */
+#i1:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+/* FILE INPUT FIX */
+input[type="file"]#i1 {
   padding: 8px;
+  background: #f8fafc;
+  cursor: pointer;
 }
 
 /* ===== BUTTON ===== */
 #b1 {
+  width: 100%;
+  margin-top: 15px;
   padding: 10px;
-  border-radius: 15px;
-  border: none;
 
-  background: #6366f1;
-  color: white;
+  background: #3b82f6;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 8px;
+
   font-size: 15px;
+  font-weight: 500;
 
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.25s ease;
 }
 
+/* BUTTON HOVER */
 #b1:hover {
-  background: #4f46e5;
-  transform: translateY(-2px);
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* BUTTON CLICK */
+#b1:active {
+  transform: scale(0.98);
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   #login1 {
-    max-width: 90%;
-    padding: 25px;
-  }
-}
-
-@media (max-width: 480px) {
-  #login1 {
+    margin: 60px 15px;
     padding: 20px;
-    border-radius: 15px;
-  }
-
-  #login1 h2 {
-    font-size: 18px;
-  }
-
-  #i1 {
-    font-size: 13px;
-    padding: 8px 12px;
-  }
-
-  #b1 {
-    font-size: 14px;
-    padding: 9px;
   }
 }

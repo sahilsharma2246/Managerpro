@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import firedb from "../../firebase"
 import { useNavigate } from 'react-router-dom'
-
+import "./List.css"
 
 function List() {
     var [manager, setManager] = useState()
@@ -39,13 +39,9 @@ function List() {
 firedb.child("Manager").child(key).update({validity:0});
   }
 
-   var s={
-                height:"100px",
-                width:"100px"
-              }
 
   return (
-    <div id='paneladmin'>
+    <div>
        
         <h1>Managers</h1>
         <div class="container">
@@ -64,7 +60,7 @@ firedb.child("Manager").child(key).update({validity:0});
                 return (
                   <tr>
                     <td>{index + 1}</td>
-                    <td><img style={s} src={manager[key].Image} alt=''></img></td>
+                    <td><img src={manager[key].Image} alt=''></img></td>
                     <td>{manager[key].email}</td>
                     <td>{manager[key].password}</td>
                     <td>

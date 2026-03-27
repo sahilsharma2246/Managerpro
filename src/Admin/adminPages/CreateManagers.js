@@ -39,7 +39,7 @@ function CreateManagers() {
     }
     
     return (
-      <div id='paneladmin'>
+      <div>
         
         <div id='login1'>
         <h2>Register</h2>

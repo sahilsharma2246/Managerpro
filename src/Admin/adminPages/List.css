@@ -1,0 +1,155 @@
+/* ===== TABLE ===== */
+.table {
+  width: 100%;
+  border-collapse: separate;   /* needed for spacing */
+  border-spacing: 0 10px;      /* 👈 space between rows */
+  background: transparent;
+}
+
+/* ===== HEADER ===== */
+.table thead {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.table thead th {
+  padding: 16px;
+  font-size: 16px;
+  text-align: left;
+
+  background: #3b82f6;
+}
+
+/* ===== ROW ===== */
+.table tbody tr {
+  background: #ffffff;
+  border-radius: 12px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+
+.table tbody tr:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+/* ===== CELLS ===== */
+.table td {
+  padding: 14px;
+  font-size: 15px;
+  color: #334155;
+}
+
+/* ===== FIX BORDER RADIUS FOR ROW ===== */
+.table tbody tr td:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.table tbody tr td:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* ===== IMAGE ===== */
+.table img {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+/* ===== BUTTONS ===== */
+#btng,
+#btnge {
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* RED */
+#btng {
+  background: #ef4444;
+  color: white;
+  border: none;
+}
+
+#btng:hover {
+  background: #dc2626;
+}
+
+/* GREEN */
+#btnge {
+  background: #22c55e;
+  color: white;
+  border: none;
+}
+
+#btnge:hover {
+  background: #16a34a;
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    margin-bottom: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  .table td {
+    text-align: right;
+    padding: 10px 12px;
+    position: relative;
+    font-size: 14px;
+  }
+
+  /* LABELS */
+  .table td:nth-child(1)::before { content: "S.No"; }
+  .table td:nth-child(2)::before { content: "Image"; }
+  .table td:nth-child(3)::before { content: "Email"; }
+  .table td:nth-child(4)::before { content: "Password"; }
+  .table td:nth-child(5)::before { content: "Operation"; }
+
+  .table td::before {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+
+    font-weight: 600;
+    color: #64748b;
+  }
+
+  .table img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+
+  #btng,
+  #btnge {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+

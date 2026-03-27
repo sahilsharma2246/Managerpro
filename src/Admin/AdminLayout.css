@@ -1,141 +1,43 @@
-/* ===== MAIN LAYOUT ===== */
-.admin-layout {
-  display: flex;
-  min-height: 100vh;
-  background: #f3f4f6;
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
 }
 
-/* ===== SIDEBAR ===== */
-.admin-sidebar {
-  width: 250px;
-  background: linear-gradient(180deg, #6366f1, #4f46e5);
-  color: white;
-
-  padding: 25px 20px;
-
-  display: flex;
-  flex-direction: column;
+/* ===== BODY ===== */
+body {
+  background: #f1f5f9;
+  color: #1e293b;
 }
 
-/* LOGO */
-.logo {
-  font-size: 22px;
-  margin-bottom: 30px;
-  text-align: center;
+/* ===== MAIN CONTENT ===== */
+#root > div {
+  margin-left: 240px;
+  padding: 30px;
 }
 
-/* NAV LINKS */
-.admin-sidebar nav {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.admin-sidebar a {
-  text-decoration: none;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-.admin-sidebar a:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.admin-sidebar a.active {
-  background: white;
-  color: #4f46e5;
-  font-weight: bold;
-}
-
-/* ===== MAIN ===== */
-.admin-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ===== HEADER ===== */
-.admin-header {
-  height: 60px;
-
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 20px;
-
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.admin-header h3 {
-  color: #111827;
-}
-
-/* ===== CONTENT ===== */
-.admin-content {
+/* ===== AUTO CARD STYLE (OPTIONAL BUT NICE) ===== */
+#root > div > * {
+  background: #ffffff;
   padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* ================================= */
-/* 🔥 RESPONSIVE FIX (NO JS) */
-/* ================================= */
-
-/* TABLET */
-@media (max-width: 992px) {
-  .admin-sidebar {
-    width: 200px;
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  #root > div {
+    margin-left: 200px;
   }
 }
 
-/* MOBILE */
 @media (max-width: 600px) {
-
-  /* stack layout */
-  .admin-layout {
-    flex-direction: column;
-  }
-
-  /* sidebar becomes top bar */
-  .admin-sidebar {
-    width: 100%;
-    padding: 10px;
-  }
-
-  /* horizontal scroll but clean */
-  .admin-sidebar nav {
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 8px;
-  }
-
-  /* hide scrollbar */
-  .admin-sidebar nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* links styling */
-  .admin-sidebar a {
-    white-space: nowrap;
-    padding: 8px 12px;
-    font-size: 13px;
-  }
-
-  /* content spacing */
-  .admin-content {
-    padding: 15px;
-  }
-
-  .admin-header {
-    padding: 0 15px;
-  }
-
-  .admin-header h3 {
-    font-size: 16px;
+  #root > div {
+    margin-left: 0;
+    margin-top: 80px;
   }
 }

@@ -40,7 +40,7 @@ function ShowContact() {
   }
 
   return (
-    <div id="paneladmin">
+    <div>
      <h1>Contact Messages</h1>
       <div class="container">
         <table class="table table-bordered">

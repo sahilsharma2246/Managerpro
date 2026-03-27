@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from 'react';
 import firedb from '../../firebase';
+import "./Dashboard.css"
 
 function Dashboard() {
   var [holder, setHolder] = useState();
@@ -45,18 +46,14 @@ function Dashboard() {
     info();
   }, []);
 
-  var s = {
-    height: "100px",
-    width: "100px"
-  };
-
+  
   function Del(key) {
     firedb.child("Gallery").child(key).remove();
     show();
   }
 
   return (
-    <div id='paneladmin'>
+    <div>
       
       <h1>Data uploaded</h1>
       <select onChange={set} value={data}>
@@ -80,7 +77,7 @@ function Dashboard() {
               return (
                 <tr key={key}>
                   <td>
-                    <img style={s} src={filteredHolder[key].image} />
+                    <img  src={filteredHolder[key].image} />
                   </td>
                   <td>{filteredHolder[key].uploader}</td>
                   <td>{filteredHolder[key].uploadedAt}</td>

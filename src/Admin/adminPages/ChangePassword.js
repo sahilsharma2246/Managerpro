@@ -33,7 +33,7 @@ function set(e)
       setPassword(e.target.value)
     }
   return (
-    <div id='paneladmin'>
+    <div>
  
 
   <div className="change-card">
