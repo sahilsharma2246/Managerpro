@@ -1,86 +1,79 @@
-/* ===== PAGE CENTER ===== */
+/* ===== PAGE BACKGROUND ===== */
+body {
+  background: #fff7ed;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== CARD CONTAINER ===== */
 #login1 {
-  max-width: 380px;
-  margin: 80px auto;
-  padding: 30px 25px;
+  width: 100%;
+  max-width: 420px;
+  margin: 100px auto;
 
   background: #ffffff;
-  border-radius: 14px;
+  padding: 30px;
+  border-radius: 12px;
 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  border-top: 5px solid #f97316;
 
   text-align: center;
 }
 
 /* ===== TITLE ===== */
 #login1 h2 {
+  color: #ea580c;
   margin-bottom: 20px;
-  color: #1e293b;
-  font-weight: 600;
 }
 
 /* ===== INPUTS ===== */
 #i1 {
   width: 100%;
-  margin: 10px 0;
-  padding: 10px 12px;
+  padding: 10px;
+  margin-bottom: 15px;
 
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 6px;
+  border: 1px solid #fdba74;
 
   font-size: 14px;
   outline: none;
-
-  transition: all 0.2s ease;
 }
 
-/* INPUT FOCUS */
+/* ===== INPUT FOCUS ===== */
 #i1:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+  border-color: #f97316;
 }
 
-/* FILE INPUT FIX */
-input[type="file"]#i1 {
-  padding: 8px;
-  background: #f8fafc;
+/* ===== FILE INPUT ===== */
+input[type="file"] {
+  background: #fff;
   cursor: pointer;
 }
 
 /* ===== BUTTON ===== */
 #b1 {
   width: 100%;
-  margin-top: 15px;
   padding: 10px;
 
-  background: #3b82f6;
-  color: #ffffff;
+  background: #f97316;
+  color: white;
 
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
 
   font-size: 15px;
-  font-weight: 500;
-
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: 0.3s;
 }
 
-/* BUTTON HOVER */
 #b1:hover {
-  background: #2563eb;
-  transform: translateY(-1px);
-}
-
-/* BUTTON CLICK */
-#b1:active {
-  transform: scale(0.98);
+  background: #ea580c;
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   #login1 {
-    margin: 60px 15px;
+    margin: 80px 15px;
     padding: 20px;
   }
 }

@@ -4,10 +4,13 @@ import "./Userlayout.css";
 
 function UserLayout() {
   return (
-    <>
+    <div className="user-layout">
       <UserHeader />
-      <Outlet />
-    </>
+      
+      <main className="user-content">
+        <Outlet />
+      </main>
+    </div>
   );
 }
 

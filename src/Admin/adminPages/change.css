@@ -1,43 +1,46 @@
-/* ===== PAGE CENTER ===== */
+/* ===== PAGE WRAPPER ===== */
+body {
+  background: #fff7ed;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== CENTER CARD ===== */
 .change-card {
-  max-width: 350px;
+  width: 100%;
+  max-width: 400px;
   margin: 100px auto;
-  padding: 30px 25px;
 
   background: #ffffff;
-  border-radius: 14px;
+  padding: 30px;
+  border-radius: 12px;
 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  border-top: 5px solid #f97316;
 
   text-align: center;
 }
 
-/* ===== TITLE ===== */
+/* ===== HEADING ===== */
 .change-card h2 {
+  color: #ea580c;
   margin-bottom: 20px;
-  color: #1e293b;
-  font-weight: 600;
 }
 
 /* ===== INPUT ===== */
 .change-card input {
   width: 100%;
-  padding: 10px 12px;
-  margin-bottom: 15px;
+  padding: 10px;
+  margin-bottom: 20px;
 
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 6px;
+  border: 1px solid #fdba74;
 
   font-size: 14px;
   outline: none;
-
-  transition: 0.2s;
 }
 
-/* INPUT FOCUS */
 .change-card input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+  border-color: #f97316;
 }
 
 /* ===== BUTTON ===== */
@@ -45,34 +48,25 @@
   width: 100%;
   padding: 10px;
 
-  background: #3b82f6;
-  color: #ffffff;
+  background: #f97316;
+  color: white;
 
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
 
   font-size: 15px;
-  font-weight: 500;
-
   cursor: pointer;
-  transition: 0.25s;
+  transition: 0.3s;
 }
 
-/* HOVER */
 .change-card button:hover {
-  background: #2563eb;
-  transform: translateY(-1px);
-}
-
-/* CLICK */
-.change-card button:active {
-  transform: scale(0.98);
+  background: #ea580c;
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .change-card {
-    margin: 70px 15px;
+    margin: 80px 15px;
     padding: 20px;
   }
 }

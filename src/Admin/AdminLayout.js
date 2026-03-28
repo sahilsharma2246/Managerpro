@@ -5,12 +5,13 @@ import AdminHeader from "./adminComponent/AdminHeader";
 function AdminLayout() {
   return (
     <>
-    <AdminHeader/>
-     <Outlet />
-
+      <AdminHeader />
+      <main>
+        <div className="page-container">
+          <Outlet />
+        </div>
+      </main>
     </>
-          
-        
   );
 }
 

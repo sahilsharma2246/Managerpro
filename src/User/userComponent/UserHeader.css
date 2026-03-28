@@ -12,6 +12,10 @@
 
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+  position: sticky;   /* ✅ prevent overlap */
+  top: 10px;
+  z-index: 1000;
 }
 
 /* ===== LOGO ===== */
@@ -39,25 +43,27 @@
   gap: 20px;
 }
 
+/* ===== LINKS ===== */
 .menu a {
   text-decoration: none;
   color: #6b7280;
   font-weight: 500;
   position: relative;
   transition: 0.3s;
+  white-space: nowrap; /* ✅ prevent breaking */
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 .menu a:hover {
   color: #111827;
 }
 
-/* ACTIVE LINK (React Router NavLink) */
+/* ACTIVE */
 .menu a.active {
   color: #111827;
 }
 
-/* UNDERLINE ANIMATION */
+/* UNDERLINE */
 .menu a::after {
   content: "";
   position: absolute;
@@ -76,16 +82,35 @@
   width: 100%;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
+
   #head {
     flex-direction: column;
-    gap: 10px;
-    padding: 20px;
+    align-items: flex-start;
+    padding: 15px 20px;
   }
 
+  /* LOGO spacing */
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  /* SCROLLABLE MENU (important fix) */
   .menu {
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 5px;
+  }
+
+  /* scrollbar styling */
+  .menu::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .menu::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
   }
 }

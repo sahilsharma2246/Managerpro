@@ -1,43 +1,69 @@
-/* ===== RESET ===== */
+/* ===== GLOBAL ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
 }
 
-/* ===== BODY ===== */
 body {
-  background: #f1f5f9;
-  color: #1e293b;
+  font-family: "Poppins", sans-serif;
+  background: #fff7ed;
 }
 
-/* ===== MAIN CONTENT ===== */
-#root > div {
-  margin-left: 240px;
+/* ===== NAV HEIGHT VARIABLE ===== */
+:root {
+  --nav-height: 70px;
+}
+
+/* ===== MAIN AREA ===== */
+main {
   padding: 30px;
+  margin-top: var(--nav-height);
+  min-height: calc(100vh - var(--nav-height));
 }
 
-/* ===== AUTO CARD STYLE (OPTIONAL BUT NICE) ===== */
-#root > div > * {
+/* ===== CONTAINER ===== */
+.page-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== CARD ===== */
+.admin-card {
   background: #ffffff;
-  padding: 20px;
+  padding: 22px;
   border-radius: 12px;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   margin-bottom: 20px;
 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-left: 6px solid #f97316;
+  transition: 0.3s;
 }
 
-/* ===== RESPONSIVE ===== */
+.admin-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== HEADINGS ===== */
+h1, h2, h3 {
+  color: #ea580c;
+  margin-bottom: 12px;
+}
+
+p {
+  color: #444;
+}
+
+/* ===== MOBILE FIX ===== */
 @media (max-width: 768px) {
-  #root > div {
-    margin-left: 200px;
-  }
-}
 
-@media (max-width: 600px) {
-  #root > div {
-    margin-left: 0;
-    margin-top: 80px;
+  /* increase space because navbar becomes taller */
+  :root {
+    --nav-height: 120px;
+  }
+
+  main {
+    padding: 15px;
   }
 }

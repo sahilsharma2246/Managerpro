@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import firedb from "../../firebase"
-
+import"./Contact.css"
 import React, { useEffect, useState } from 'react'
 
 function ShowContact() {

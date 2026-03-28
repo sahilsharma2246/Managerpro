@@ -1,85 +1,100 @@
-/* ===== SIDEBAR ===== */
+/* ===== NAVBAR ===== */
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 210px;
-  height: 100vh;
-
-  background: linear-gradient(180deg, #f8fafc, #e0f2fe);
-  border-right: 1px solid #e2e8f0;
-
   display: flex;
-  flex-direction: column;
-  padding-top: 20px;
+  align-items: center;
+  justify-content: space-between;
 
+  padding: 12px 20px;
+  background: #ffffff;
+  border-bottom: 2px solid #fed7aa;
+
+  position: fixed;
+  width: 100%;
+  top: 0;
   z-index: 1000;
 }
 
 /* ===== LOGO ===== */
 .logo {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  color: #2563eb;
+  color: #f97316;
+}
 
-  text-align: center;
-  padding: 15px 10px;
-  margin-bottom: 15px;
-
-  border-bottom: 1px solid #e2e8f0;
+/* ===== NAV LINKS ===== */
+.nav-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 /* ===== LINKS ===== */
 nav a {
-  font-size: 14px;
-  padding: 10px 14px;
-  margin: 6px 12px;
-
-  color: #1e293b;
   text-decoration: none;
-  border-radius: 8px;
+  color: #444;
+  font-size: 14px;
 
-  font-weight: 500;
-  transition: all 0.25s ease;
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  white-space: nowrap;
+  transition: 0.3s;
 }
 
-/* ===== HOVER ===== */
 nav a:hover {
-  background: #3b82f6;
-  color: #ffffff;
-  transform: translateX(4px);
+  background: #f97316;
+  color: white;
 }
 
-/* ===== ACTIVE ===== */
-nav a.active {
-  background: #2563eb;
-  color: #ffffff;
+/* ===== LOGOUT ===== */
+.logout a {
+  background: #ef4444;
+  color: white;
 }
 
-/* ===== RESPONSIVE ===== */
+.logout a:hover {
+  background: #dc2626;
+}
+
+/* ================= MOBILE FIX ================= */
 @media (max-width: 768px) {
-  nav {
-    width: 180px;
-  }
-}
 
-@media (max-width: 600px) {
   nav {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 10px;
+    flex-direction: column;
+    align-items: stretch;
   }
 
+  /* Logo full width */
   .logo {
-    width: 100%;
-    border-bottom: none;
+    margin-bottom: 10px;
   }
 
-  nav a {
-    margin: 5px;
-    padding: 7px 10px;
-    font-size: 13px;
+  /* LINKS become scrollable row */
+  .nav-links {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 5px;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .nav-links::-webkit-scrollbar-thumb {
+    background: #f97316;
+    border-radius: 10px;
+  }
+
+  /* Logout full width */
+  .logout {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .logout a {
+    display: block;
+    text-align: center;
+    width: 100%;
   }
 }

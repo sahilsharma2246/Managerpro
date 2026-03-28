@@ -1,155 +1,109 @@
+/* ===== TITLE ===== */
+h1 {
+  text-align: center;
+  color: #ea580c;
+  margin-bottom: 25px;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow-x: auto;
+}
+
 /* ===== TABLE ===== */
-.table {
+table {
   width: 100%;
-  border-collapse: separate;   /* needed for spacing */
-  border-spacing: 0 10px;      /* 👈 space between rows */
-  background: transparent;
+  border-collapse: collapse;
+  background: #ffffff;
+
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
 /* ===== HEADER ===== */
-.table thead {
-  background: #3b82f6;
-  color: #ffffff;
+thead {
+  background: #f97316;
+  color: white;
 }
 
-.table thead th {
-  padding: 16px;
-  font-size: 16px;
-  text-align: left;
-
-  background: #3b82f6;
+th {
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
 }
 
-/* ===== ROW ===== */
-.table tbody tr {
-  background: #ffffff;
-  border-radius: 12px;
+/* ===== BODY ===== */
+td {
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #444;
 
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  transition: 0.2s;
+  border-bottom: 1px solid #f1f5f9;
 }
 
-.table tbody tr:hover {
-  background: #f8fafc;
-  transform: translateY(-2px);
-}
-
-/* ===== CELLS ===== */
-.table td {
-  padding: 14px;
-  font-size: 15px;
-  color: #334155;
-}
-
-/* ===== FIX BORDER RADIUS FOR ROW ===== */
-.table tbody tr td:first-child {
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
-}
-
-.table tbody tr td:last-child {
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+/* ===== ROW HOVER ===== */
+tr:hover {
+  background: #fff7ed;
 }
 
 /* ===== IMAGE ===== */
-.table img {
-  width: 65px;
-  height: 65px;
+img {
+  width: 60px;
+  height: 60px;
   object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
+
+  border-radius: 50%;
+  border: 2px solid #fed7aa;
 }
 
-/* ===== BUTTONS ===== */
-#btng,
-#btnge {
-  padding: 8px 14px;
-  font-size: 14px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* RED */
-#btng {
-  background: #ef4444;
-  color: white;
-  border: none;
-}
-
-#btng:hover {
-  background: #dc2626;
-}
-
-/* GREEN */
+/* ===== ENABLE BUTTON ===== */
 #btnge {
   background: #22c55e;
   color: white;
+
   border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 #btnge:hover {
   background: #16a34a;
 }
 
-/* ========================= */
-/* 📱 RESPONSIVE */
-/* ========================= */
+/* ===== DISABLE BUTTON ===== */
+#btng {
+  background: #ef4444;
+  color: white;
 
-@media (max-width: 768px) {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
 
-  .table thead {
-    display: none;
-  }
-
-  .table,
-  .table tbody,
-  .table tr,
-  .table td {
-    display: block;
-    width: 100%;
-  }
-
-  .table tr {
-    margin-bottom: 15px;
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 12px;
-  }
-
-  .table td {
-    text-align: right;
-    padding: 10px 12px;
-    position: relative;
-    font-size: 14px;
-  }
-
-  /* LABELS */
-  .table td:nth-child(1)::before { content: "S.No"; }
-  .table td:nth-child(2)::before { content: "Image"; }
-  .table td:nth-child(3)::before { content: "Email"; }
-  .table td:nth-child(4)::before { content: "Password"; }
-  .table td:nth-child(5)::before { content: "Operation"; }
-
-  .table td::before {
-    position: absolute;
-    left: 12px;
-    top: 10px;
-
-    font-weight: 600;
-    color: #64748b;
-  }
-
-  .table img {
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-  }
-
-  #btng,
-  #btnge {
-    width: 100%;
-    margin-top: 10px;
-  }
+  cursor: pointer;
+  transition: 0.3s;
 }
 
+#btng:hover {
+  background: #dc2626;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  th, td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  img {
+    width: 45px;
+    height: 45px;
+  }
+}

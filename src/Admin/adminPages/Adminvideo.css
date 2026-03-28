@@ -1,122 +1,113 @@
-/* ===== WRAPPER ===== */
-#paneladmin {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 20px;
-}
-
-/* ===== TITLE ===== */
-#paneladmin h1 {
-  margin: 20px 0;
-  color: #111827;
-  font-size: 24px;
+/* ===== PAGE TITLE ===== */
+h1 {
   text-align: center;
+  color: #ea580c;
+  margin-bottom: 20px;
 }
 
 /* ===== DROPDOWN ===== */
-#paneladmin select {
-  padding: 10px 15px;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  margin-bottom: 20px;
-  background: white;
+select {
+  display: block;
+  margin: 0 auto 25px auto;
+
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #fdba74;
+
+  background: #fff;
+  color: #444;
+  font-size: 14px;
+
   outline: none;
+  cursor: pointer;
+}
+
+select:hover {
+  border-color: #f97316;
 }
 
 /* ===== CONTAINER ===== */
 .container {
-  width: 100%;
-  max-width: 950px;
+  overflow-x: auto;
 }
 
-/* ===== TABLE (DESKTOP) ===== */
-.table {
+/* ===== TABLE ===== */
+table {
   width: 100%;
   border-collapse: collapse;
+  background: #ffffff;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* ===== TABLE HEADER ===== */
+thead {
+  background: #f97316;
+  color: white;
+}
+
+th {
+  padding: 12px;
+  font-size: 14px;
   text-align: center;
 }
 
-.table thead {
-  background: linear-gradient(90deg, #6366f1, #4f46e5);
-  color: white;
-}
-
-.table th,
-.table td {
+/* ===== TABLE BODY ===== */
+td {
   padding: 12px;
-  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+
+  border-bottom: 1px solid #f1f5f9;
 }
 
-/* ===== VIDEO ===== */
-.table iframe {
-  width: 140px;
-  aspect-ratio: 16/9;
-  border-radius: 10px;
+/* ===== ROW HOVER ===== */
+tr:hover {
+  background: #fff7ed;
 }
 
-/* ===== BUTTON ===== */
-#btng {
-  padding: 6px 12px;
-  border-radius: 10px;
+/* ===== VIDEO PREVIEW ===== */
+iframe {
+  width: 160px;
+  height: 100px;
+  border-radius: 8px;
   border: none;
+}
+
+/* ===== DELETE BUTTON ===== */
+#btng {
   background: #ef4444;
   color: white;
+
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* ================================= */
-/* 🔥 MOBILE VIEW (CARD STYLE) */
-/* ================================= */
-@media (max-width: 600px) {
+#btng:hover {
+  background: #dc2626;
+}
 
-  /* hide table header */
-  .table thead {
-    display: none;
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  iframe {
+    width: 120px;
+    height: 80px;
   }
 
-  /* make rows card */
-  .table,
-  .table tbody,
-  .table tr,
-  .table td {
-    display: block;
-    width: 100%;
+  th, td {
+    font-size: 12px;
+    padding: 8px;
   }
 
-  .table tr {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-
-    margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 15px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  }
-
-  .table td {
-    text-align: left;
-    padding: 8px 0;
-    border: none;
-    font-size: 14px;
-  }
-
-  /* add labels */
-  .table td:nth-child(1)::before { content: "Video: "; font-weight: bold; }
-  .table td:nth-child(2)::before { content: "Uploaded By: "; font-weight: bold; }
-  .table td:nth-child(3)::before { content: "Time: "; font-weight: bold; }
-  .table td:nth-child(4)::before { content: "Action: "; font-weight: bold; }
-
-  /* video full width */
-  .table iframe {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  /* button full width */
-  #btng {
-    width: 100%;
-    margin-top: 10px;
+  select {
+    width: 90%;
   }
 }
