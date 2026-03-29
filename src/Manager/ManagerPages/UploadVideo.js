@@ -1,125 +1,129 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
-import React, { useEffect, useState } from 'react'
-import firedb from "../../firebase"
-import { useNavigate } from "react-router-dom";
-import ManagerHeader from '../managerComponents/ManagerHeader';
+import React, { useEffect, useState } from "react";
+import firedb from "../../firebase";
+import "./Video.css";
 
 function UploadVideo() {
-  var [Manager,setManager]= useState ()
- var [holder,setHolder]=  useState()
- var[data,setData]=useState()
-  var[record,setRecord]=useState()
+  const [Manager, setManager] = useState({});
+  const [holder, setHolder] = useState({});
+  const [record, setRecord] = useState([]);
+  const [user, setUser] = useState("");
 
-     function show()
-     {
-       firedb.child("Video").once("value",function(snapshot){
-          setHolder(snapshot.val())
-      })
-     }
-
-     function show1(){
-      firedb.child("Data").child("-Oibg9KUQyakg5dY-r6p").once("value",function(snapshot){
-          setManager(snapshot.val())}
-     )}
-
-
-     useEffect(function(){
-         show()
-         show1()
-       },[])
-
-const[user,setUser]= useState()
-
-    function set(e)
-   {
-     setUser(e.target.value)
-   }
-
-useEffect(function(){
-  if(holder) {
-    check()
+  /* ===== FETCH VIDEOS ===== */
+  function show() {
+    firedb.child("Video").once("value", (snapshot) => {
+      setHolder(snapshot.val() || {});
+    });
   }
-},[holder])
 
- function check() {
-    if (holder  && Manager && Manager.email) {
-      const uploaders = Object.keys(holder).map(key => holder[key].uploader);
-      setData(uploaders);
-      const managerRecords = Object.keys(holder).filter(key => holder[key].uploader === Manager.email);
+  /* ===== FETCH MANAGER ===== */
+  function show1() {
+    firedb
+      .child("Data")
+      .child("-Oibg9KUQyakg5dY-r6p")
+      .once("value", (snapshot) => {
+        setManager(snapshot.val() || {});
+      });
+  }
+
+  useEffect(() => {
+    show();
+    show1();
+  }, []);
+
+  /* ===== INPUT ===== */
+  function handleChange(e) {
+    setUser(e.target.value);
+  }
+
+  /* ===== CHECK LIMIT ===== */
+  useEffect(() => {
+    if (holder && Manager?.email) {
+      const managerRecords = Object.keys(holder).filter(
+        (key) => holder[key].uploader === Manager.email
+      );
       setRecord(managerRecords);
     }
-  }
+  }, [holder, Manager]);
 
-
-
-console.log(record)
-
-
-  function save(){
-  
-    if(record && record.length >= 2){ 
-        alert("You have already uploaded 2 videos.")
-    }else{
-
-firedb.child("Video").push({
-          ID:user,
-          uploader:Manager.email,
-          uploadedAt: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
-})
-   show()
+  /* ===== SAVE ===== */
+  function save() {
+    if (!user) {
+      alert("Enter video link");
+      return;
     }
-  }
-  
-  var s={
-                height:"200px",
-                width:"300px"
-              }
 
-              function Del(key){
-                firedb.child("Video").child(key).remove()
-                show()
-              }
+    if (record.length >= 2) {
+      alert("You have already uploaded 2 videos.");
+      return;
+    }
+
+    firedb.child("Video").push({
+      ID: user,
+      uploader: Manager.email,
+      uploadedAt: new Date().toLocaleString("en-IN", {
+        timeZone: "Asia/Kolkata",
+      }),
+    });
+
+    alert("Video uploaded");
+    setUser("");
+    show();
+  }
+
+  /* ===== DELETE ===== */
+  function Del(key) {
+    firedb.child("Video").child(key).remove();
+    show();
+  }
 
   return (
-    <div id='panelman'>
-      <ManagerHeader/>
-      <h2>Upload Video</h2>
-      <input type='text' name='name'  placeholder="enter src" value={user} onChange={set}></input>
-      <button onClick={save}>Upload</button>
- 
-  <div class="container">
-        <table class="table table-bordered">
-          <thead>
-            <th>
-              Videos
-            </th>
-            <th>
-              Operation
-            </th>
-          </thead>
-          <tbody>
-             {
-             
-               holder? Object.keys(holder).map(function(key){
-                    return(
-                      <tr>
+    <div className="video-page">
 
-                          <td>
-                           <iframe style={s} src={holder[key].ID}></iframe>
-                          </td>
-                          <td>
-                            <button id='btng' onClick={() => Del(key) }>delete</button>
-                          </td>
-                      </tr>
-                    )
-                }):""
-             }
+      <h2>Upload Video</h2>
+
+      {/* ===== FORM ===== */}
+      <div className="video-form">
+        <input
+          type="text"
+          placeholder="Enter video link"
+          value={user}
+          onChange={handleChange}
+        />
+
+        <button onClick={save}>Upload</button>
+      </div>
+
+      {/* ===== TABLE ===== */}
+      <div className="container">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Videos</th>
+              <th>Operation</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {Object.keys(holder).map((key) => (
+              <tr key={key}>
+                <td>
+                  <iframe src={holder[key].ID}></iframe>
+                </td>
+                <td>
+                  <button id="btng" onClick={() => Del(key)}>
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
+
         </table>
-      </div>    
+      </div>
 
     </div>
-  )
+  );
 }
 
 export default UploadVideo;

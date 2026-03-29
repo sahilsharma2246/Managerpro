@@ -1,0 +1,154 @@
+/* ===== PAGE ===== */
+.news-page {
+  text-align: center;
+  padding: 10px;
+}
+
+/* ===== TITLE ===== */
+.news-page h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #1f2937;
+}
+
+/* ===== FORM ===== */
+.news-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+/* INPUTS */
+.news-form input[type="text"],
+.news-form input[type="file"] {
+  width: 280px;
+  padding: 10px;
+
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+
+  font-size: 14px;
+  background: #fff;
+  transition: 0.2s;
+}
+
+.news-form input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.15);
+}
+
+/* BUTTON */
+#bn {
+  width: 280px;
+  padding: 10px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  color: #fff;
+
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#bn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== PREVIEW ===== */
+.preview img {
+  width: 100px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* ===== TABLE CONTAINER ===== */
+.container {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 16px;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  overflow-x: auto;
+}
+
+/* ===== TABLE ===== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ===== TABLE HEADER (IMPROVED) ===== */
+.table thead {
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+}
+
+.table thead th {
+  padding: 14px 12px;
+  text-align: left;
+
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ===== TABLE BODY ===== */
+.table td {
+  padding: 12px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* ROW HOVER */
+.table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* ===== IMAGE ===== */
+.table img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ===== DELETE BUTTON ===== */
+#btng {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+
+  background: #fee2e2;
+  color: #dc2626;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#btng:hover {
+  background: #dc2626;
+  color: #fff;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .news-form input,
+  #bn {
+    width: 100%;
+  }
+
+  .table img {
+    width: 55px;
+    height: 55px;
+  }
+}

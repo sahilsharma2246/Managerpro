@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from 'react'
 import firedb from "../../firebase"
-import ManagerHeader from "../managerComponents/ManagerHeader";
+import "./Gallery.css"
 
 function UploadGallery() {
   var [path, setPath] = useState()
@@ -74,10 +74,7 @@ function upload() {
 
  
 
- var s={
-                height:"100px",
-                width:"100px"
-              }
+ 
 
 function Del(key){
   firedb.child("Gallery").child(key).remove()
@@ -85,9 +82,9 @@ function Del(key){
 }
 
   return (
-    <div id='panelman'>
-      <ManagerHeader />
-      <div id='u1'>
+    <div>
+     
+      <div>
         
       <h2>Upload Gallery</h2>
       <input onChange={set} type="file" />
@@ -96,8 +93,8 @@ function Del(key){
       <br />
       <br />
       </div>
-      <div class="container">
-        <table class="table table-bordered">
+      <div className="container">
+        <table className="table table-bordered">
           <thead>
             <th>
               Images
@@ -115,7 +112,7 @@ function Del(key){
                       
                       <tr>
                           <td>
-                           <img  style={s} src={holder[key].image}></img>
+                           <img   src={holder[key].image}></img>
                           </td>
                           <td>
                             <button id='btng' onClick={() => Del(key) } >delete</button>
