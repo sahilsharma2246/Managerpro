@@ -1,11 +1,10 @@
+/* eslint-disable no-unused-vars */
+import React from 'react'
 import { useEffect } from 'react'
 import firedb from "./firebase";
 import { useNavigate } from 'react-router-dom';
-
-
-
-
 function Temp() {
+  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,4 +28,5 @@ function Temp() {
   return null;
 }
 
-export default Temp;
+
+export default Temp
