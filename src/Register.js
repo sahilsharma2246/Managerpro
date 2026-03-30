@@ -22,7 +22,7 @@ const Register = () => {
   }
   return (
     <div>
-      <h2>Register / Login</h2>
+      <h2>Register/Login</h2>
       
         <input
          name="email"
