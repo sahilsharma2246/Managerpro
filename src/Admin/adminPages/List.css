@@ -26,11 +26,12 @@ table {
 
 /* ===== HEADER ===== */
 thead {
-  background: #f97316;
+  
   color: white;
 }
 
 th {
+  background-color: #f97316;
   padding: 12px;
   font-size: 14px;
   text-align: center;
