@@ -14,7 +14,7 @@ function ManagerLogout() {
 
     // redirect to home/login
     navigate("/");
-  }, []);
+  }, [navigate]);
 
   return null;
 }
