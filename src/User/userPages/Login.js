@@ -23,7 +23,7 @@ function Login() {
       }
       
        else {
-        alert('Invalid email or password');
+        alert('Invalid Email or Password');
       }
     });
   };
