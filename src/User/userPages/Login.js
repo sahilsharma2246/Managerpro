@@ -44,7 +44,7 @@ function Login() {
     <div id="tt">
 
       <div id="login1">
-        <h2>Admin Login</h2>
+        <h2>Admin-Login</h2>
         <input 
           id="i1" 
           placeholder="Email" 
